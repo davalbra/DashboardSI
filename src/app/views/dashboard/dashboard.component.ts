@@ -23,6 +23,11 @@ interface IUser {
 })
 export class DashboardComponent implements OnInit {
   constructor(private chartsData: DashboardChartsData) {}
+  usuarios: any;
+  proveedores: any;
+  ventas: any;
+  ganancias: any;
+  satisfaccion: any;
 
   public users: IUser[] = [
     {
@@ -112,6 +117,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.initCharts();
+    this.usuarios = Math.floor(Math.random() * 1894);
+    this.proveedores = Math.floor(Math.random() * 1894);
+    this.ventas = Math.floor(Math.random() * 1894);
+    this.ganancias = Math.floor(Math.random() * 1894);
+    this.satisfaccion = Math.floor(Math.random() * 1894);
   }
 
   initCharts(): void {
