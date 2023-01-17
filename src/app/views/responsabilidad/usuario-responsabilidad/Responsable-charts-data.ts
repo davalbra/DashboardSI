@@ -15,7 +15,7 @@ export interface IChartProps {
 @Injectable({
   providedIn: 'any',
 })
-export class UsuarioChartsData {
+export class ResponsableChartsData {
   constructor() {
     this.initMainChart();
   }
@@ -27,7 +27,7 @@ export class UsuarioChartsData {
   }
 
   initMainChart(period: string = 'Month') {
-    const brandUsuarios = '#FFE082 ';
+    const brandUsuarios = '#A5D6A7 ';
     const brandProveedores = '#90CAF9  ';
     const brandVentas = '#A5D6A7 ';
     const brandGanancias = '#FFE082 ';
@@ -100,7 +100,7 @@ export class UsuarioChartsData {
     const datasets = [
       {
         data: this.mainChart['Data1'],
-        label: 'Ventas',
+        label: 'Clientes',
         ...colors[0],
       },
 

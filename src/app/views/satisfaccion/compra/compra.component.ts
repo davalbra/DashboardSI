@@ -19,7 +19,7 @@ export class CompraComponent implements OnInit {
   selectedOption: string = '0';
   months = ['5', '4', '3', '2', '1'];
   title: string = '';
-  comprado: number = Math.floor((Math.random() + 3) * 100);
+  comprado: number = Math.floor((Math.random() + 3) * 1000);
   constructor() {}
 
   ngOnInit() {
@@ -27,6 +27,7 @@ export class CompraComponent implements OnInit {
   }
 
   onChange(event) {
+    this.comprado = Math.floor((Math.random() + 3) * 1000);
     this.title = this.select[this.selectedOption];
     this.chartBarData = {
       labels: [...this.months].slice(0, 5),

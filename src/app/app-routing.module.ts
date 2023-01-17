@@ -84,7 +84,7 @@ const routes: Routes = [
       {
         path: 'responsabilidad',
         loadChildren: () =>
-          import('./views/Responsabilidad/Responsabilidad.module').then(
+          import('./views/responsabilidad/responsabilidad.module').then(
             (m) => m.ResponsabilidadModule
           ),
       },

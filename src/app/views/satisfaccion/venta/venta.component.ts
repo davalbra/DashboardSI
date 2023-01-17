@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./venta.component.scss'],
 })
 export class VentaComponent implements OnInit {
+  votos: any;
   users: any = [
     {
       name: 'Yiorgos Avraamu',
@@ -14,7 +15,7 @@ export class VentaComponent implements OnInit {
       country: 'Us',
       usage: 5,
       period: 'Jun 11, 2021 - Jul 10, 2021',
-      payment: 'Mastercard',
+      payment: 'Muy buena appli...',
       activity: 'Hace 10 sec',
       avatar: './assets/img/avatars/1.jpg',
       status: 'success',
@@ -27,7 +28,7 @@ export class VentaComponent implements OnInit {
       country: 'Br',
       usage: 4,
       period: 'Jun 11, 2021 - Jul 10, 2021',
-      payment: 'Visa',
+      payment: 'Exelente atención...',
       activity: 'Hace 5 minutos ',
       avatar: './assets/img/avatars/2.jpg',
       status: 'danger',
@@ -40,7 +41,7 @@ export class VentaComponent implements OnInit {
       country: 'In',
       usage: 3,
       period: 'Jun 11, 2021 - Jul 10, 2021',
-      payment: 'Stripe',
+      payment: 'La applicacion es...',
       activity: 'Hace 1 hora',
       avatar: './assets/img/avatars/3.jpg',
       status: 'warning',
@@ -53,7 +54,7 @@ export class VentaComponent implements OnInit {
       country: 'Pl',
       usage: 5,
       period: 'Jun 11, 2021 - Jul 10, 2021',
-      payment: 'Amex',
+      payment: 'Facil de usar pero...',
       activity: 'Ayer',
       avatar: './assets/img/avatars/6.jpg',
       status: 'info',
@@ -66,7 +67,7 @@ export class VentaComponent implements OnInit {
       country: 'Fr',
       usage: 4,
       period: 'Jun 11, 2021 - Jul 10, 2021',
-      payment: 'Paypal',
+      payment: 'Me gusta y ...',
       activity: 'Semana pasada',
       avatar: './assets/img/avatars/4.jpg',
       status: 'secondary',
@@ -79,7 +80,7 @@ export class VentaComponent implements OnInit {
       country: 'Es',
       usage: 2,
       period: 'Jun 11, 2021 - Jul 10, 2021',
-      payment: 'ApplePay',
+      payment: 'Tiene problemas de ....',
       activity: 'Hace un mes',
       avatar: './assets/img/avatars/5.jpg',
       status: 'success',
@@ -116,9 +117,11 @@ export class VentaComponent implements OnInit {
 
   ngOnInit() {
     this.title = this.select[this.selectedOption];
+    this.votos = Math.floor(Math.random() * 1000);
   }
 
   onChange(event) {
+    this.votos = Math.floor(Math.random() * 1000);
     this.title = this.select[this.selectedOption];
     this.chartBarData = {
       labels: [...this.months].slice(0, 5),

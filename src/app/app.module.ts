@@ -59,6 +59,8 @@ import { UsuarioComponent } from './views/fidelidad/usuario/usuario.component';
 import { ChartjsModule } from '@coreui/angular-chartjs';
 import { PipeArrayPipe } from './pipes/pipe-array.pipe';
 import { WidgetsRoutingModule } from './views/widgets/widgets-routing.module';
+import { UsuarioResponsabilidadComponent } from './views/responsabilidad/usuario-responsabilidad/usuario-responsabilidad.component';
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
 };
@@ -78,9 +80,11 @@ const APP_CONTAINERS = [
     CampanaComponent,
     RegistrosComponent,
     UsuarioComponent,
+    UsuarioResponsabilidadComponent,
     PipeArrayPipe,
   ],
   imports: [
+    AppRoutingModule,
     WidgetsRoutingModule,
     GridModule,
     WidgetModule,
@@ -89,7 +93,6 @@ const APP_CONTAINERS = [
     FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     AvatarModule,
     BreadcrumbModule,
     FooterModule,

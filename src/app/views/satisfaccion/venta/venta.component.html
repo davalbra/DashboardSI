@@ -15,8 +15,8 @@
   <c-col xs="12" lg="10">
     <c-card class="mb-4">
       <c-card-header>
-        Proveedor: {{ title }}, número total de votaciones
-        {{ comprado }}
+        Proveedor: {{ title }}, número total de calificaciones:
+        {{ votos }}
       </c-card-header>
       <c-card-body>
         <c-chart type="bar" [data]="chartBarData"></c-chart>
@@ -47,7 +47,7 @@
                 <th>Usuarios</th>
 
                 <th>Puntuación</th>
-                <th class="text-center">Metodo de pago</th>
+                <th class="text-center">Comentario</th>
                 <th>Hace</th>
               </tr>
             </thead>
@@ -79,7 +79,9 @@
                   </div>
                 </td>
                 <td class="text-center">
-                  <svg cIcon name="cibCc{{ user.payment }}" size="xl"></svg>
+                  <div class="small text-medium-emphasis">
+                    {{ user.payment }}
+                  </div>
                 </td>
                 <td>
                   <div class="small text-medium-emphasis">Votado desde</div>

@@ -117,11 +117,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.initCharts();
-    this.usuarios = Math.floor(Math.random() * 1894);
-    this.proveedores = Math.floor(Math.random() * 1894);
+    this.usuarios = Math.floor(Math.random() * 589);
+    this.proveedores = Math.floor(Math.random() * 100);
     this.ventas = Math.floor(Math.random() * 1894);
-    this.ganancias = Math.floor(Math.random() * 1894);
-    this.satisfaccion = Math.floor(Math.random() * 1894);
+    this.ganancias = Math.floor(Math.random() * 90);
+    this.satisfaccion = Math.floor(Math.random() * 1500);
   }
 
   initCharts(): void {
@@ -129,6 +129,11 @@ export class DashboardComponent implements OnInit {
   }
 
   setTrafficPeriod(value: string): void {
+    this.usuarios = Math.floor(Math.random() * 589);
+    this.proveedores = Math.floor(Math.random() * 100);
+    this.ventas = Math.floor(Math.random() * 1894);
+    this.ganancias = Math.floor(Math.random() * 30);
+    this.satisfaccion = Math.floor(Math.random() * 1500);
     this.trafficRadioGroup.setValue({ trafficRadio: value });
     this.chartsData.initMainChart(value);
     this.initCharts();
