@@ -19,96 +19,95 @@ interface IUser {
 
 @Component({
   templateUrl: 'dashboard.component.html',
-  styleUrls: ['dashboard.component.scss']
+  styleUrls: ['dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private chartsData: DashboardChartsData) {
-  }
+  constructor(private chartsData: DashboardChartsData) {}
 
   public users: IUser[] = [
     {
       name: 'Yiorgos Avraamu',
       state: 'New',
       registered: 'Jan 1, 2021',
-      country: 'Us',
-      usage: 50,
+      country: 'Pichincha',
+      usage: 80,
       period: 'Jun 11, 2021 - Jul 10, 2021',
       payment: 'Mastercard',
-      activity: '10 sec ago',
+      activity: 'Hace 10 sec',
       avatar: './assets/img/avatars/1.jpg',
       status: 'success',
-      color: 'success'
+      color: 'success',
     },
     {
       name: 'Avram Tarasios',
       state: 'Recurring ',
       registered: 'Jan 1, 2021',
-      country: 'Br',
-      usage: 10,
+      country: 'Napo',
+      usage: 70,
       period: 'Jun 11, 2021 - Jul 10, 2021',
       payment: 'Visa',
-      activity: '5 minutes ago',
+      activity: 'Hace 5 minutos ',
       avatar: './assets/img/avatars/2.jpg',
       status: 'danger',
-      color: 'info'
+      color: 'info',
     },
     {
       name: 'Quintin Ed',
       state: 'New',
       registered: 'Jan 1, 2021',
-      country: 'In',
-      usage: 74,
+      country: 'Loja',
+      usage: 60,
       period: 'Jun 11, 2021 - Jul 10, 2021',
       payment: 'Stripe',
-      activity: '1 hour ago',
+      activity: 'Hace 1 hora',
       avatar: './assets/img/avatars/3.jpg',
       status: 'warning',
-      color: 'warning'
-    },
-    {
-      name: 'Enéas Kwadwo',
-      state: 'Sleep',
-      registered: 'Jan 1, 2021',
-      country: 'Fr',
-      usage: 98,
-      period: 'Jun 11, 2021 - Jul 10, 2021',
-      payment: 'Paypal',
-      activity: 'Last month',
-      avatar: './assets/img/avatars/4.jpg',
-      status: 'secondary',
-      color: 'danger'
-    },
-    {
-      name: 'Agapetus Tadeáš',
-      state: 'New',
-      registered: 'Jan 1, 2021',
-      country: 'Es',
-      usage: 22,
-      period: 'Jun 11, 2021 - Jul 10, 2021',
-      payment: 'ApplePay',
-      activity: 'Last week',
-      avatar: './assets/img/avatars/5.jpg',
-      status: 'success',
-      color: 'primary'
+      color: 'warning',
     },
     {
       name: 'Friderik Dávid',
       state: 'New',
       registered: 'Jan 1, 2021',
-      country: 'Pl',
-      usage: 43,
+      country: 'Guayas',
+      usage: 94,
       period: 'Jun 11, 2021 - Jul 10, 2021',
       payment: 'Amex',
-      activity: 'Yesterday',
+      activity: 'Ayer',
       avatar: './assets/img/avatars/6.jpg',
       status: 'info',
-      color: 'dark'
-    }
+      color: 'dark',
+    },
+    {
+      name: 'Enéas Kwadwo',
+      state: 'Sleep',
+      registered: 'Jan 1, 2021',
+      country: 'Cotopaxi',
+      usage: 47,
+      period: 'Jun 11, 2021 - Jul 10, 2021',
+      payment: 'Paypal',
+      activity: 'Semana pasada',
+      avatar: './assets/img/avatars/4.jpg',
+      status: 'secondary',
+      color: 'danger',
+    },
+    {
+      name: 'Agapetus Tadeáš',
+      state: 'New',
+      registered: 'Jan 1, 2021',
+      country: 'Los Rios',
+      usage: 20,
+      period: 'Jun 11, 2021 - Jul 10, 2021',
+      payment: 'ApplePay',
+      activity: 'Hace un mes',
+      avatar: './assets/img/avatars/5.jpg',
+      status: 'success',
+      color: 'primary',
+    },
   ];
   public mainChart: IChartProps = {};
   public chart: Array<IChartProps> = [];
   public trafficRadioGroup = new UntypedFormGroup({
-    trafficRadio: new UntypedFormControl('Month')
+    trafficRadio: new UntypedFormControl('Month'),
   });
 
   ngOnInit(): void {

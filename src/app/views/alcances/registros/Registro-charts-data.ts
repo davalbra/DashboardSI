@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { getStyle, hexToRgba } from '@coreui/utils/src';
+import { getStyle } from '@coreui/utils/src';
 
 export interface IChartProps {
   data?: any;
@@ -15,7 +15,7 @@ export interface IChartProps {
 @Injectable({
   providedIn: 'any',
 })
-export class DashboardChartsData {
+export class RegistroChartsData {
   constructor() {
     this.initMainChart();
   }
@@ -37,19 +37,13 @@ export class DashboardChartsData {
     // mainChart
     this.mainChart['elements'] = period === 'Month' ? 12 : 27;
     this.mainChart['Data1'] = [];
-    this.mainChart['Data2'] = [];
-    this.mainChart['Data3'] = [];
-    this.mainChart['Data4'] = [];
-    this.mainChart['Data5'] = [];
+
     this.mainChart['Data6'] = [];
 
     // generate random values for mainChart
     for (let i = 0; i <= this.mainChart['elements']; i++) {
       this.mainChart['Data1'].push(this.random(50, 240));
-      this.mainChart['Data2'].push(this.random(20, 160));
-      this.mainChart['Data3'].push(this.random(50, 240));
-      this.mainChart['Data4'].push(this.random(20, 160));
-      this.mainChart['Data5'].push(this.random(20, 160));
+
       this.mainChart['Data6'].push(65);
     }
 
@@ -92,30 +86,7 @@ export class DashboardChartsData {
         borderColor: brandUsuarios,
         pointHoverBackgroundColor: '#fff',
       },
-      {
-        // proveedores
-        backgroundColor: 'transparent',
-        borderColor: brandProveedores,
-        pointHoverBackgroundColor: '#fff',
-      },
-      {
-        // ventas
-        backgroundColor: 'transparent',
-        borderColor: brandVentas,
-        pointHoverBackgroundColor: '#fff',
-      },
-      {
-        // ganancias
-        backgroundColor: 'transparent',
-        borderColor: brandGanancias,
-        pointHoverBackgroundColor: '#fff',
-      },
-      {
-        // satisfaccion
-        backgroundColor: 'transparent',
-        borderColor: brandsatisfaccion,
-        pointHoverBackgroundColor: '#fff',
-      },
+
       {
         // brandDanger
         backgroundColor: 'transparent',
@@ -129,29 +100,10 @@ export class DashboardChartsData {
     const datasets = [
       {
         data: this.mainChart['Data1'],
-        label: 'Usuarios',
+        label: 'Proveedores',
         ...colors[0],
       },
-      {
-        data: this.mainChart['Data2'],
-        label: 'Proveedores',
-        ...colors[1],
-      },
-      {
-        data: this.mainChart['Data3'],
-        label: 'Ventas',
-        ...colors[2],
-      },
-      {
-        data: this.mainChart['Data4'],
-        label: 'Ganancias',
-        ...colors[3],
-      },
-      {
-        data: this.mainChart['Data5'],
-        label: 'Satisfacción',
-        ...colors[4],
-      },
+
       {
         data: this.mainChart['Data6'],
         label: 'umbral',

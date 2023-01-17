@@ -4,8 +4,8 @@
   <c-card-body>
     <c-row>
       <c-col sm="5">
-        <h4 class="card-title mb-0" id="traffic">Traffic</h4>
-        <div class="small text-medium-emphasis">January - December 2021</div>
+        <h4 class="card-title mb-0" id="traffic">Tráfico</h4>
+        <div class="small text-medium-emphasis">Enero - Diciembre 2022</div>
       </c-col>
       <c-col class="d-none d-md-block" sm="7">
         <button cButton class="float-end" color="primary">
@@ -25,7 +25,7 @@
               cFormCheckLabel
               color="secondary"
               variant="outline"
-              >Day</label
+              >Día</label
             >
 
             <input
@@ -40,7 +40,7 @@
               cFormCheckLabel
               color="secondary"
               variant="outline"
-              >Month</label
+              >Mes</label
             >
 
             <input
@@ -55,7 +55,7 @@
               cFormCheckLabel
               color="secondary"
               variant="outline"
-              >Year</label
+              >Año</label
             >
           </c-button-group>
         </form>
@@ -71,53 +71,52 @@
       Main chart
     </c-chart>
   </c-card-body>
+
   <c-card-footer>
     <c-row class="text-center" [md]="5" [xs]="1">
       <c-col class="mb-sm-2 mb-0">
-        <div class="text-medium-emphasis">Visits</div>
-        <strong>29.703 Users (40%)</strong>
+        <div class="text-medium-emphasis">% de usuarios</div>
+        <strong>29K Usuarios (40%)</strong>
         <c-progress class="mt-2" thin>
-          <c-progress-bar color="success" value="40"></c-progress-bar>
+          <c-progress-bar color="usuarios" value="40"></c-progress-bar>
         </c-progress>
       </c-col>
       <c-col class="mb-sm-2 mb-0">
-        <div class="text-medium-emphasis">Unique</div>
-        <strong>24.093 Users (20%)</strong>
+        <div class="text-medium-emphasis">% de proveedores</div>
+        <strong>24K Proveedores</strong>
         <c-progress class="mt-2" thin>
-          <c-progress-bar color="info" value="20"></c-progress-bar>
+          <c-progress-bar color="proveedores" value="20"></c-progress-bar>
         </c-progress>
       </c-col>
       <c-col class="mb-sm-2 mb-0">
-        <div class="text-medium-emphasis">Page views</div>
-        <strong>78.706 Views (60%)</strong>
+        <div class="text-medium-emphasis">% de ventas</div>
+        <strong>10.3K Ventas (60%)</strong>
         <c-progress class="mt-2" thin>
-          <c-progress-bar color="warning" value="60"></c-progress-bar>
+          <c-progress-bar color="ventas" value="60"></c-progress-bar>
         </c-progress>
       </c-col>
       <c-col class="mb-sm-2 mb-0">
-        <div class="text-medium-emphasis">New Users</div>
-        <strong>22.123 Users (80%)</strong>
+        <div class="text-medium-emphasis">% de ganancias</div>
+        <strong>2.411$ Ganancias</strong>
         <c-progress class="mt-2" thin>
-          <c-progress-bar color="danger" value="80"></c-progress-bar>
+          <c-progress-bar color="ganancias" value="80"></c-progress-bar>
         </c-progress>
       </c-col>
       <c-col class="mb-sm-2 mb-0">
-        <div class="text-medium-emphasis">Bounce Rate</div>
-        <strong>Average Rate (40.15%)</strong>
+        <div class="text-medium-emphasis">% de satisfacción</div>
+        <strong>Satisfacción (90.15%)</strong>
         <c-progress class="mt-2" thin>
-          <c-progress-bar value="40"></c-progress-bar>
+          <c-progress-bar color="satisfaccion" value="90"></c-progress-bar>
         </c-progress>
       </c-col>
     </c-row>
   </c-card-footer>
 </c-card>
 
-<app-widgets-brand [withCharts]="true"></app-widgets-brand>
-
 <c-row>
   <c-col xs>
     <c-card class="mb-4">
-      <c-card-header>Traffic {{ "&" }} Sales</c-card-header>
+      <c-card-header>Tráfico detallado por mes</c-card-header>
       <c-card-body>
         <c-row>
           <c-col md="6" xl="6" xs="12">
@@ -126,7 +125,7 @@
                 <div
                   class="border-start border-start-4 border-start-info py-1 px-3 mb-3"
                 >
-                  <div class="text-medium-emphasis small">New Clients</div>
+                  <div class="text-medium-emphasis small">Nuevos clientes</div>
                   <div class="fs-5 fw-semibold">9,123</div>
                 </div>
               </c-col>
@@ -134,9 +133,7 @@
                 <div
                   class="border-start border-start-4 border-start-danger py-1 px-3 mb-3"
                 >
-                  <div class="text-medium-emphasis small">
-                    Recurring Clients
-                  </div>
+                  <div class="text-medium-emphasis small">Clientes activos</div>
                   <div class="fs-5 fw-semibold">22,643</div>
                 </div>
               </c-col>
@@ -146,7 +143,7 @@
 
             <div class="progress-group mb-4">
               <div class="progress-group-prepend">
-                <span class="text-medium-emphasis small">Monday</span>
+                <span class="text-medium-emphasis small">Lunes</span>
               </div>
               <div class="progress-group-bars">
                 <c-progress thin>
@@ -159,7 +156,7 @@
             </div>
             <div class="progress-group mb-4">
               <div class="progress-group-prepend">
-                <span class="text-medium-emphasis small">Tuesday</span>
+                <span class="text-medium-emphasis small">Martes</span>
               </div>
               <div class="progress-group-bars">
                 <c-progress thin>
@@ -172,7 +169,7 @@
             </div>
             <div class="progress-group mb-4">
               <div class="progress-group-prepend">
-                <span class="text-medium-emphasis small">Wednesday</span>
+                <span class="text-medium-emphasis small">Miercoles</span>
               </div>
               <div class="progress-group-bars">
                 <c-progress thin>
@@ -185,7 +182,7 @@
             </div>
             <div class="progress-group mb-4">
               <div class="progress-group-prepend">
-                <span class="text-medium-emphasis small">Thursday</span>
+                <span class="text-medium-emphasis small">Jueves</span>
               </div>
               <div class="progress-group-bars">
                 <c-progress thin>
@@ -198,7 +195,7 @@
             </div>
             <div class="progress-group mb-4">
               <div class="progress-group-prepend">
-                <span class="text-medium-emphasis small">Friday</span>
+                <span class="text-medium-emphasis small">Viernes</span>
               </div>
               <div class="progress-group-bars">
                 <c-progress thin>
@@ -211,7 +208,7 @@
             </div>
             <div class="progress-group mb-4">
               <div class="progress-group-prepend">
-                <span class="text-medium-emphasis small">Saturday</span>
+                <span class="text-medium-emphasis small">Sabado</span>
               </div>
               <div class="progress-group-bars">
                 <c-progress thin>
@@ -224,7 +221,7 @@
             </div>
             <div class="progress-group mb-4">
               <div class="progress-group-prepend">
-                <span class="text-medium-emphasis small">Sunday</span>
+                <span class="text-medium-emphasis small">Domingo</span>
               </div>
               <div class="progress-group-bars">
                 <c-progress thin>
@@ -240,14 +237,14 @@
                 <sup>
                   <span class="badge badge-pill badge-sm bg-info">&nbsp;</span>
                 </sup>
-                <span>New clients</span>
+                <span>Nuevos clientes</span>
                 &nbsp;&nbsp;
                 <sup>
                   <span class="badge badge-pill badge-sm bg-danger"
                     >&nbsp;</span
                   >
                 </sup>
-                <span>Recurring clients</span>
+                <span>Clientes activos</span>
               </small>
             </div>
           </c-col>
@@ -258,7 +255,7 @@
                 <div
                   class="border-start border-start-4 border-start-warning py-1 px-3 mb-3"
                 >
-                  <div class="text-medium-emphasis small">Page views</div>
+                  <div class="text-medium-emphasis small">Usuarios totales</div>
                   <div class="fs-5 fw-semibold">78,623</div>
                 </div>
               </c-col>
@@ -266,7 +263,7 @@
                 <div
                   class="border-start border-start-4 border-start-success py-1 px-3 mb-3"
                 >
-                  <div class="text-medium-emphasis small">Organic</div>
+                  <div class="text-medium-emphasis small">Externos</div>
                   <div class="fs-5 fw-semibold">49,123</div>
                 </div>
               </c-col>
@@ -277,7 +274,7 @@
             <div class="progress-group mb-4">
               <div class="progress-group-header">
                 <svg cIcon class="icon icon-lg me-2" name="cilUser"></svg>
-                <span>Male</span>
+                <span>Hombres</span>
                 <span class="ms-auto font-semibold">43%</span>
               </div>
               <div class="progress-group-bars">
@@ -289,7 +286,7 @@
             <div class="progress-group mb-5">
               <div class="progress-group-header">
                 <svg cIcon class="icon icon-lg me-2" name="cilUserFemale"></svg>
-                <span>Female</span>
+                <span>Mujeres</span>
                 <span class="ms-auto font-semibold">37%</span>
               </div>
               <div class="progress-group-bars">
@@ -302,9 +299,9 @@
             <div class="progress-group">
               <div class="progress-group-header">
                 <svg cIcon class="icon icon-lg me-2" name="cibGoogle"></svg>
-                <span>Organic Search</span>
+                <span>Busqueda de Google</span>
                 <span class="ms-auto font-semibold">
-                  191,235 <span class="text-medium-emphasis small">(56%)</span>
+                  19,235 <span class="text-medium-emphasis small">(56%)</span>
                 </span>
               </div>
               <div class="progress-group-bars">
@@ -318,7 +315,7 @@
                 <svg cIcon class="icon icon-lg me-2" name="cibFacebook"></svg>
                 <span>Facebook</span>
                 <span class="ms-auto font-semibold">
-                  51,223 <span class="text-medium-emphasis small">(15%)</span>
+                  5,223 <span class="text-medium-emphasis small">(15%)</span>
                 </span>
               </div>
               <div class="progress-group-bars">
@@ -332,7 +329,7 @@
                 <svg cIcon class="icon icon-lg me-2" name="cibTwitter"></svg>
                 <span>Twitter</span>
                 <span class="ms-auto font-semibold">
-                  37,564 <span class="text-medium-emphasis small">(11%)</span>
+                  3,564 <span class="text-medium-emphasis small">(11%)</span>
                 </span>
               </div>
               <div class="progress-group-bars">
@@ -346,7 +343,7 @@
                 <svg cIcon class="icon icon-lg me-2" name="cibLinkedin"></svg>
                 <span>LinkedIn</span>
                 <span class="ms-auto font-semibold">
-                  27,319 <span class="text-medium-emphasis small">(8%)</span>
+                  2,319 <span class="text-medium-emphasis small">(8%)</span>
                 </span>
               </div>
               <div class="progress-group-bars">
@@ -375,7 +372,7 @@
 <c-row>
   <c-col xs>
     <c-card id="users" class="mb-4">
-      <c-card-header>Users</c-card-header>
+      <c-card-header>lista de usuarios destacados</c-card-header>
       <c-card-body>
         <table
           [hover]="true"
@@ -390,11 +387,11 @@
               <th class="text-center">
                 <svg cIcon name="cilPeople"></svg>
               </th>
-              <th>User</th>
-              <th class="text-center">Country</th>
-              <th>Usage</th>
-              <th class="text-center">Payment Method</th>
-              <th>Activity</th>
+              <th>Usuarios</th>
+              <th class="text-center">Provincia</th>
+              <th>Días usando la aplicación</th>
+              <th class="text-center">métodos de pago</th>
+              <th>última conexión</th>
             </tr>
           </thead>
           <tbody>
@@ -408,20 +405,9 @@
               </td>
               <td>
                 <div>{{ user.name }}</div>
-                <div class="small text-medium-emphasis text-nowrap">
-                  <span>
-                    {{ user.state }} | Registered: {{ user.registered }}
-                  </span>
-                </div>
               </td>
               <td class="text-center">
-                <svg
-                  cIcon
-                  id="{{ user.country + user.name }}"
-                  name="cif{{ user.country }}"
-                  size="xl"
-                  title="{{ user.country }}"
-                ></svg>
+                <div>{{ user.country }}</div>
               </td>
               <td>
                 <div class="d-flex justify-content-between">

@@ -1,1 +1,69 @@
-<p>usuario works!</p>
+<div class="row justify-content-center">
+  <c-col sm="5" class="mb-3">
+    <h4 class="card-title mb-0 text-center" id="traffic">
+      Promedio de compras
+    </h4>
+    <h4 class="card-title mb-0 text-center" id="traffic">por mes</h4>
+  </c-col>
+  <c-card class="mb-4">
+    <c-card-body>
+      <c-row>
+        <c-col sm="5">
+          <h4 class="card-title mb-0" id="traffic">
+            Compras dentro de la aplicación de CarTool
+          </h4>
+          <div class="small text-medium-emphasis">Enero - Diciembre 2022</div>
+        </c-col>
+        <c-col class="d-none d-md-block" sm="7">
+          <button cButton class="float-end" color="primary">
+            <svg cIcon name="cilCloudDownload"></svg>
+          </button>
+          <form [formGroup]="trafficRadioGroup">
+            <c-button-group class="float-end me-3" role="group">
+              <input
+                class="btn-check"
+                formControlName="trafficRadio"
+                type="radio"
+                value="Month"
+              />
+              <label
+                (click)="setTrafficPeriod('Month')"
+                cButton
+                cFormCheckLabel
+                color="secondary"
+                variant="outline"
+                >Mes</label
+              >
+            </c-button-group>
+          </form>
+        </c-col>
+      </c-row>
+      <c-chart
+        [data]="mainChart.data"
+        [height]="300"
+        [ngStyle]="{ 'marginTop.px': 40 }"
+        [options]="mainChart.options"
+        [type]="mainChart.type"
+      >
+        Main chart
+      </c-chart>
+    </c-card-body>
+
+    <c-card-footer>
+      <c-row class="text-center justify-content-center" [md]="5" [xs]="1">
+        <c-col class="mb-sm-2 mb-0">
+          <div class="text-medium-emphasis">
+            Compras por {{ fecha }}: {{ proveedores }}
+          </div>
+          <strong>{{ ganancias }}M Generado al año</strong>
+          <c-progress class="mt-2" thin>
+            <c-progress-bar
+              color="proveedores"
+              value="{{ ganancias }}"
+            ></c-progress-bar>
+          </c-progress>
+        </c-col>
+      </c-row>
+    </c-card-footer>
+  </c-card>
+</div>
