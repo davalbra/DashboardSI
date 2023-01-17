@@ -1,0 +1,26 @@
+<div class="row justify-content-center gap-4">
+  <c-col xs="12" lg="10">
+    <select
+      [(ngModel)]="selectedOption"
+      (change)="onChange($event)"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option *ngFor="let sel of select; index as i" value="{{ i }}">
+        {{ sel }}
+      </option>
+    </select>
+  </c-col>
+
+  <c-col xs="12" lg="10">
+    <c-card class="mb-4">
+      <c-card-header>
+        Satisfracción del producto {{ title }}, consumido un número total de
+        {{ comprado }} veces
+      </c-card-header>
+      <c-card-body>
+        <c-chart type="bar" [data]="chartBarData"></c-chart>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</div>

@@ -1,0 +1,95 @@
+<div class="row justify-content-center gap-4">
+  <c-col xs="12" lg="10">
+    <select
+      [(ngModel)]="selectedOption"
+      (change)="onChange($event)"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option *ngFor="let sel of select; index as i" value="{{ i }}">
+        {{ sel }}
+      </option>
+    </select>
+  </c-col>
+
+  <c-col xs="12" lg="10">
+    <c-card class="mb-4">
+      <c-card-header>
+        Proveedor: {{ title }}, número total de votaciones
+        {{ comprado }}
+      </c-card-header>
+      <c-card-body>
+        <c-chart type="bar" [data]="chartBarData"></c-chart>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-row>
+    <c-col xs>
+      <c-card id="users" class="mb-4">
+        <c-card-header
+          >Lista de usuarios que han votado por el Proveedor:
+          {{ title }}</c-card-header
+        >
+        <c-card-body>
+          <table
+            [hover]="true"
+            [responsive]="true"
+            [striped]="true"
+            align="middle"
+            cTable
+            class="mb-0 border"
+          >
+            <thead cTableColor="light">
+              <tr>
+                <th class="text-center">
+                  <svg cIcon name="cilPeople"></svg>
+                </th>
+                <th>Usuarios</th>
+
+                <th>Puntuación</th>
+                <th class="text-center">Metodo de pago</th>
+                <th>Hace</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users; index as i">
+                <td class="text-center">
+                  <c-avatar
+                    size="md"
+                    src="{{ user.avatar }}"
+                    status="{{ user.status }}"
+                  ></c-avatar>
+                </td>
+                <td>
+                  <div>{{ user.name }}</div>
+                  <div class="small text-medium-emphasis text-nowrap">
+                    <span> </span>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="d-flex justify-content-between">
+                    <div class="float-start">
+                      <strong> {{ user.usage }} </strong>
+                      <i
+                        *ngFor="let i of user.usage | pipeArray"
+                        class="bi bi-star-fill"
+                      ></i>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-center">
+                  <svg cIcon name="cibCc{{ user.payment }}" size="xl"></svg>
+                </td>
+                <td>
+                  <div class="small text-medium-emphasis">Votado desde</div>
+                  <div class="fw-semibold text-nowrap">{{ user.activity }}</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div>
