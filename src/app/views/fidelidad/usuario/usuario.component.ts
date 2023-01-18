@@ -23,10 +23,33 @@ interface IUser {
   styleUrls: ['./usuario.component.scss'],
 })
 export class UsuarioComponent implements OnInit {
+  select = [
+    'Michael Jordan',
+    'LeBron James',
+    'Kareem Abdul-Jabbar',
+    'Wilt Chamberlain',
+    'Magic Johnson',
+    'Larry Bird',
+    'Bill Russell',
+    'Tim Duncan',
+    'Shaquille ONeal',
+    'Hakeem Olajuwon',
+    'Kobe Bryant',
+    'Dirk Nowitzki',
+    'Karl Malone',
+    'Moses Malone',
+    'Julius Erving',
+    'John Stockton',
+    'David Robinson',
+    'Kevin Garnett',
+    'Patrick Ewing',
+    'Charles Barkley',
+  ];
+  selectedOption: string = '0';
   constructor(private chartsData: UsuarioChartsData) {}
   fechaConvertida: any = { Month: 'Mes', Day: 'Día', Year: 'Año' };
   proveedores: any;
-  ganancias: number = Math.floor(Math.random() * 100);
+  ganancias: number = Math.floor(Math.random() * 1000);
   fecha: string = 'Mes';
   public users = [
     {
@@ -113,10 +136,18 @@ export class UsuarioComponent implements OnInit {
   public trafficRadioGroup = new UntypedFormGroup({
     trafficRadio: new UntypedFormControl('Month'),
   });
+  onChange(event) {
+    this.ganancias = Math.floor(Math.random() * 1000);
 
+    this.proveedores = Math.floor(Math.random() * 100);
+
+    this.trafficRadioGroup.setValue({ trafficRadio: 'Month' });
+    this.chartsData.initMainChart('Month');
+    this.initCharts();
+  }
   ngOnInit(): void {
     this.initCharts();
-    this.proveedores = Math.floor(Math.random() * 1894);
+    this.proveedores = Math.floor(Math.random() * 100);
   }
 
   initCharts(): void {
@@ -124,10 +155,10 @@ export class UsuarioComponent implements OnInit {
   }
 
   setTrafficPeriod(value: string): void {
-    this.ganancias = Math.floor(Math.random() * 100);
+    this.ganancias = Math.floor(Math.random() * 1000);
     this.fecha = this.fechaConvertida[value];
     if (value == 'Month') {
-      this.proveedores = Math.floor(Math.random() * 1894);
+      this.proveedores = Math.floor(Math.random() * 100);
     } else if (value == 'Day') {
       this.proveedores = Math.floor(Math.random() * 125);
     } else {

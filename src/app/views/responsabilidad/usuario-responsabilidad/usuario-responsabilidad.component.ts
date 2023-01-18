@@ -23,6 +23,29 @@ interface IUser {
   styleUrls: ['./usuario-responsabilidad.component.scss'],
 })
 export class UsuarioResponsabilidadComponent implements OnInit {
+  select = [
+    'Michael Jordan',
+    'LeBron James',
+    'Kareem Abdul-Jabbar',
+    'Wilt Chamberlain',
+    'Magic Johnson',
+    'Larry Bird',
+    'Bill Russell',
+    'Tim Duncan',
+    'Shaquille ONeal',
+    'Hakeem Olajuwon',
+    'Kobe Bryant',
+    'Dirk Nowitzki',
+    'Karl Malone',
+    'Moses Malone',
+    'Julius Erving',
+    'John Stockton',
+    'David Robinson',
+    'Kevin Garnett',
+    'Patrick Ewing',
+    'Charles Barkley',
+  ];
+  selectedOption: string = '0';
   constructor(private chartsData: ResponsableChartsData) {}
   fechaConvertida: any = { Month: 'Mes', Day: 'Día', Year: 'Año' };
   proveedores: any;
@@ -113,7 +136,15 @@ export class UsuarioResponsabilidadComponent implements OnInit {
   public trafficRadioGroup = new UntypedFormGroup({
     trafficRadio: new UntypedFormControl('Month'),
   });
+  onChange(event) {
+    this.ganancias = Math.floor(Math.random() * 100);
 
+    this.proveedores = Math.floor(Math.random() * 1894);
+
+    this.trafficRadioGroup.setValue({ trafficRadio: 'Month' });
+    this.chartsData.initMainChart('Month');
+    this.initCharts();
+  }
   ngOnInit(): void {
     this.initCharts();
     this.proveedores = Math.floor(Math.random() * 1894);

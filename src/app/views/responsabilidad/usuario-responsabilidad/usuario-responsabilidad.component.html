@@ -1,16 +1,28 @@
 <div class="row justify-content-center">
-  <c-col sm="5" class="mb-3">
+  <c-col xs="12" sm="5" class="mb-3">
     <h4 class="card-title mb-0 text-center" id="traffic">
-      Promedio de usuarios
+      Conteo de recordatorios
     </h4>
-    <h4 class="card-title mb-0 text-center" id="traffic">Conectados</h4>
+    <h4 class="card-title mb-0 text-center" id="traffic">por usuario</h4>
+  </c-col>
+  <c-col xs="12" sm="5">
+    <select
+      [(ngModel)]="selectedOption"
+      (change)="onChange($event)"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option *ngFor="let sel of select; index as i" value="{{ i }}">
+        {{ sel }}
+      </option>
+    </select>
   </c-col>
   <c-card class="mb-4">
     <c-card-body>
       <c-row>
         <c-col sm="5">
           <h4 class="card-title mb-0" id="traffic">
-            Responsabilidad del uso de la aplicación
+            Responsabilidad del Usuario respecto a los recordatorios
           </h4>
           <div class="small text-medium-emphasis">Enero - Diciembre 2022</div>
         </c-col>
@@ -52,9 +64,6 @@
     <c-card-footer>
       <c-row class="text-center justify-content-center" [md]="5" [xs]="1">
         <c-col class="mb-sm-2 mb-0">
-          <div class="text-medium-emphasis">
-            Promedio {{ fecha }}: {{ proveedores }}
-          </div>
           <strong>{{ ganancias }} Horas al Mes</strong>
           <c-progress class="mt-2" thin>
             <c-progress-bar

@@ -1,10 +1,23 @@
 <div class="row justify-content-center">
-  <c-col sm="5" class="mb-3">
+  <c-col xs="12" sm="5" class="mb-3">
     <h4 class="card-title mb-0 text-center" id="traffic">
       Promedio de compras
     </h4>
     <h4 class="card-title mb-0 text-center" id="traffic">por mes</h4>
   </c-col>
+  <c-col xs="12" sm="5">
+    <select
+      [(ngModel)]="selectedOption"
+      (change)="onChange($event)"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option *ngFor="let sel of select; index as i" value="{{ i }}">
+        {{ sel }}
+      </option>
+    </select>
+  </c-col>
+
   <c-card class="mb-4">
     <c-card-body>
       <c-row>
@@ -53,9 +66,9 @@
       <c-row class="text-center justify-content-center" [md]="5" [xs]="1">
         <c-col class="mb-sm-2 mb-0">
           <div class="text-medium-emphasis">
-            Compras por {{ fecha }}: {{ proveedores }}0
+            Promedio de Mensual de compras: {{ proveedores }}
           </div>
-          <strong>{{ ganancias }}M Generado al año</strong>
+          <strong>{{ ganancias }}$ Generado al mes</strong>
           <c-progress class="mt-2" thin>
             <c-progress-bar
               color="ganancias"

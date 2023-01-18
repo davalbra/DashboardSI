@@ -7,14 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompraComponent implements OnInit {
   select = [
-    'llantas',
-    'aceite',
-    'bateria',
-    'frenos',
-    'motor',
-    'suspension',
-    'transmision',
-    'otros productos',
+    'Michael Jordan',
+    'LeBron James',
+    'Kareem Abdul-Jabbar',
+    'Wilt Chamberlain',
+    'Magic Johnson',
+    'Larry Bird',
+    'Bill Russell',
+    'Tim Duncan',
+    'Shaquille ONeal',
+    'Hakeem Olajuwon',
+    'Kobe Bryant',
+    'Dirk Nowitzki',
+    'Karl Malone',
+    'Moses Malone',
+    'Julius Erving',
+    'John Stockton',
+    'David Robinson',
+    'Kevin Garnett',
+    'Patrick Ewing',
+    'Charles Barkley',
   ];
   selectedOption: string = '0';
   months = ['5', '4', '3', '2', '1'];

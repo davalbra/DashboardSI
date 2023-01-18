@@ -28,7 +28,7 @@ export class ResponsableChartsData {
 
   initMainChart(period: string = 'Month') {
     const brandUsuarios = '#A5D6A7 ';
-    const brandProveedores = '#90CAF9  ';
+    const brandProveedores = '#F48FB1  ';
     const brandVentas = '#A5D6A7 ';
     const brandGanancias = '#FFE082 ';
     const brandsatisfaccion = '#FFCCBC ';
@@ -37,13 +37,13 @@ export class ResponsableChartsData {
     // mainChart
     this.mainChart['elements'] = period === 'Month' ? 12 : 27;
     this.mainChart['Data1'] = [];
-
+    this.mainChart['Data2'] = [];
     this.mainChart['Data6'] = [];
 
     // generate random values for mainChart
     for (let i = 0; i <= this.mainChart['elements']; i++) {
-      this.mainChart['Data1'].push(this.random(50, 240));
-
+      this.mainChart['Data1'].push(this.random(2, 50));
+      this.mainChart['Data2'].push(this.random(2, 50));
       this.mainChart['Data6'].push(65);
     }
 
@@ -86,7 +86,12 @@ export class ResponsableChartsData {
         borderColor: brandUsuarios,
         pointHoverBackgroundColor: '#fff',
       },
-
+      {
+        // usuarios
+        backgroundColor: 'transparent',
+        borderColor: brandProveedores,
+        pointHoverBackgroundColor: '#fff',
+      },
       {
         // brandDanger
         backgroundColor: 'transparent',
@@ -102,6 +107,11 @@ export class ResponsableChartsData {
         data: this.mainChart['Data1'],
         label: 'Clientes',
         ...colors[0],
+      },
+      {
+        data: this.mainChart['Data2'],
+        label: 'Clientes',
+        ...colors[1],
       },
 
       {
@@ -137,10 +147,10 @@ export class ResponsableChartsData {
         },
         y: {
           beginAtZero: true,
-          max: 250,
+          max: 50,
           ticks: {
             maxTicksLimit: 5,
-            stepSize: Math.ceil(250 / 5),
+            stepSize: Math.ceil(50 / 5),
           },
         },
       },

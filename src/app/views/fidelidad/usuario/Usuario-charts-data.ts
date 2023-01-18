@@ -42,9 +42,9 @@ export class UsuarioChartsData {
 
     // generate random values for mainChart
     for (let i = 0; i <= this.mainChart['elements']; i++) {
-      this.mainChart['Data1'].push(this.random(50, 240));
+      this.mainChart['Data1'].push(this.random(1, 50));
 
-      this.mainChart['Data6'].push(65);
+      this.mainChart['Data6'].push(12);
     }
 
     let labels: string[] = [];
@@ -137,10 +137,10 @@ export class UsuarioChartsData {
         },
         y: {
           beginAtZero: true,
-          max: 250,
+          max: 50,
           ticks: {
             maxTicksLimit: 5,
-            stepSize: Math.ceil(250 / 5),
+            stepSize: Math.ceil(50 / 5),
           },
         },
       },

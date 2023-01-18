@@ -16,15 +16,15 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-ChartPie' },
     children: [
       {
-        name: 'Compra',
+        name: 'Usuario con vehículo',
         url: '/satisfacción/compra',
       },
       {
-        name: 'Venta',
+        name: 'Usuario proveedor',
         url: '/satisfacción/venta',
       },
       {
-        name: 'Campaña',
+        name: 'Marketing',
         url: '/satisfacción/campana',
       },
     ],
@@ -40,7 +40,7 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-Chart' },
     children: [
       {
-        name: 'registros',
+        name: 'Registros',
         url: '/alcances/registros',
       },
     ],
@@ -55,7 +55,7 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-puzzle' },
     children: [
       {
-        name: 'usuario',
+        name: 'Usuario',
         url: '/fidelidad/usuario',
       },
     ],
@@ -70,7 +70,7 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-People' },
     children: [
       {
-        name: 'usuario',
+        name: 'Usuario',
         url: '/responsabilidad/usuarioResponsabilidad',
       },
     ],
